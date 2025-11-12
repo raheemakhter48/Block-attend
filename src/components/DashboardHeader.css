@@ -1,0 +1,102 @@
+.dashboard-header-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 1090;
+  transition: left 0.3s ease-in-out;
+}
+
+.App.sidebar-open .dashboard-header-top {
+  left: 260px;
+}
+
+.header-spacer {
+  flex: 1;
+}
+
+.header-menu-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 16px;
+}
+
+.header-menu-btn span {
+  display: block;
+  height: 2px;
+  background: #212529;
+  border-radius: 2px;
+  transition: transform 0.2s ease, width 0.2s ease;
+}
+
+.header-menu-btn span:nth-child(1) {
+  width: 20px;
+}
+
+.header-menu-btn span:nth-child(2) {
+  width: 16px;
+}
+
+.header-menu-btn span:nth-child(3) {
+  width: 20px;
+}
+
+.header-menu-btn:hover span:nth-child(2) {
+  width: 20px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 992px) {
+  .header-menu-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .App.sidebar-open .dashboard-header-top {
+    left: 0;
+  }
+
+  .dashboard-header-top {
+    padding: 0 16px;
+  }
+}
+

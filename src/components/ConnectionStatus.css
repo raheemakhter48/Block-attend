@@ -1,0 +1,75 @@
+.connection-status {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.connection-status.error {
+  border-color: #dc3545;
+  background: #f8d7da;
+}
+
+.connection-status.warning {
+  border-color: #ffc107;
+  background: #fff3cd;
+}
+
+.connection-status.success {
+  border-color: #28a745;
+  background: #d4edda;
+}
+
+.status-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.status-content {
+  flex: 1;
+}
+
+.status-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.status-content p {
+  margin: 4px 0;
+  color: #495057;
+  font-size: 14px;
+}
+
+.help-text {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.install-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #667eea;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.install-link:hover {
+  background: #5568d3;
+}
+
+
+
