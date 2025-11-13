@@ -48,5 +48,24 @@
   font-size: 13px;
 }
 
+@media (max-width: 768px) {
+  .account-debug {
+    padding: 14px;
+    font-size: 13px;
+  }
 
+  .debug-item {
+    font-size: 11px;
+  }
+}
 
+@media (max-width: 480px) {
+  .account-debug {
+    padding: 12px;
+    margin: 16px 0;
+  }
+
+  .account-debug h4 {
+    font-size: 15px;
+  }
+}

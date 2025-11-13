@@ -83,5 +83,39 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .navbar-wallet {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wallet-info {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    align-items: stretch;
+  }
+
+  .navbar-menu {
+    gap: 12px;
+  }
+
+  .navbar-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wallet-address {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-sm {
+    width: 100%;
+  }
 }
 

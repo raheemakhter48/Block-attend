@@ -2,6 +2,9 @@
   padding: 32px;
   background: #ffffff;
   min-height: calc(100vh - 64px);
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .dashboard-header {
@@ -426,6 +429,24 @@
   margin-top: 8px;
 }
 
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 24px;
+  }
+
+  .class-management {
+    padding: 28px;
+  }
+
+  .class-management-grid {
+    gap: 20px;
+  }
+
+  .class-overview-grid {
+    gap: 18px;
+  }
+}
+
 @media (max-width: 768px) {
   .class-management {
     padding: 24px;
@@ -438,6 +459,16 @@
   .class-overview-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.class-section-students ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.class-section-students ul li:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .modal-body {
@@ -633,6 +664,19 @@
     justify-content: center;
   }
 
+  .users-card {
+    padding: 20px;
+  }
+
+  .class-section-students {
+    padding: 20px;
+  }
+
+  .users-table th,
+  .users-table td {
+    white-space: nowrap;
+  }
+
   .access-instructions-card {
     padding: 24px;
   }
@@ -650,6 +694,7 @@
   .users-table th,
   .users-table td {
     padding: 12px;
+    white-space: normal;
   }
 
   .wallet-connect-card {

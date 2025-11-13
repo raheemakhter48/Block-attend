@@ -71,5 +71,33 @@
   background: #5568d3;
 }
 
+@media (max-width: 768px) {
+  .connection-status {
+    flex-direction: column;
+    padding: 20px;
+  }
 
+  .status-icon {
+    font-size: 28px;
+  }
+}
 
+@media (max-width: 480px) {
+  .connection-status {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .status-content h3 {
+    font-size: 16px;
+  }
+
+  .status-content p {
+    font-size: 13px;
+  }
+
+  .install-link {
+    width: 100%;
+    text-align: center;
+  }
+}

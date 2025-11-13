@@ -170,3 +170,41 @@
   }
 }
 
+@media (max-width: 480px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar-nav {
+    gap: 8px;
+  }
+
+  .sidebar-nav-item {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .sidebar-nav-item svg {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .sidebar-nav-item {
+    gap: 10px;
+  }
+
+  .sidebar-nav-item span {
+    display: block;
+    line-height: 1.3;
+  }
+}
+

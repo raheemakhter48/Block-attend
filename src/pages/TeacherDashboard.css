@@ -2,6 +2,9 @@
   padding: 32px;
   background: #ffffff;
   min-height: calc(100vh - 64px);
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .dashboard-header {
@@ -20,7 +23,9 @@
   border: 1px solid #e9ecef;
   border-radius: 12px;
   padding: 24px;
-  max-width: 800px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .attendance-card h2 {
@@ -551,9 +556,23 @@
   color: #212529;
 }
 
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 24px;
+  }
+
+  .attendance-card {
+    padding: 22px;
+  }
+}
+
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 16px;
+  }
+
+  .attendance-card {
+    padding: 20px;
   }
 
   .form-row {
@@ -586,7 +605,7 @@
   }
 
   .attendance-card {
-    padding: 20px;
+    padding: 18px;
   }
 
   .student-item {
