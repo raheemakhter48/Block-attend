@@ -19,8 +19,7 @@
     "vite": "^5.0.8"
   },
   "scripts": {
-    "dev": "vite --host 0.0.0.0 --port 3000",
-    "dev:local": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview"
   }
