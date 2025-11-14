@@ -70,6 +70,19 @@ export const verifyContractDeployment = async (provider) => {
 }
 
 /**
+ * Get network name from chainId
+ */
+const getNetworkName = (chainId) => {
+  const networks = {
+    1: 'Ethereum Mainnet',
+    11155111: 'Sepolia Testnet',
+    1337: 'Hardhat Local',
+    31337: 'Hardhat Network'
+  }
+  return networks[chainId] || `Network (Chain ID: ${chainId})`
+}
+
+/**
  * Get network info
  */
 export const getNetworkInfo = async (provider) => {
@@ -79,11 +92,16 @@ export const getNetworkInfo = async (provider) => {
     }
 
     const network = await provider.getNetwork()
+    const currentChainId = Number(network.chainId)
+    const expectedChainId = deployment.chainId || 1337
+    
     return {
       status: 'success',
-      chainId: Number(network.chainId),
+      chainId: currentChainId,
       name: network.name,
-      expectedChainId: 1337
+      expectedChainId: expectedChainId,
+      expectedNetworkName: getNetworkName(expectedChainId),
+      isCorrectNetwork: currentChainId === expectedChainId
     }
   } catch (error) {
     return { status: 'error', error: error.message || 'Unknown error getting network info' }

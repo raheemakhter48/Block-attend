@@ -89,14 +89,14 @@ const AdminDashboard = () => {
 
         if (networkInfo.status === 'error') {
           console.error('Network info error:', networkInfo.error)
-          setError(`Network check failed:\n${networkInfo.error}\n\nPlease ensure Hardhat node running hai aur MetaMask Hardhat Local network par hai.`)
+          setError(`Network check failed:\n${networkInfo.error}\n\nPlease ensure you're connected to the correct network.`)
           setIsAdmin(false)
           return
         }
         
-        if (networkInfo.chainId !== 1337) {
-          console.error('Wrong network. Expected Chain ID: 1337, Got:', networkInfo.chainId)
-          setError(`Wrong network detected. Expected Chain ID: 1337, but got: ${networkInfo.chainId}\n\nPlease switch to Hardhat Local network in MetaMask.`)
+        if (!networkInfo.isCorrectNetwork) {
+          console.error(`Wrong network. Expected Chain ID: ${networkInfo.expectedChainId}, Got: ${networkInfo.chainId}`)
+          setError(`Wrong network detected.\n\nExpected: ${networkInfo.expectedNetworkName} (Chain ID: ${networkInfo.expectedChainId})\nCurrent: ${networkInfo.name} (Chain ID: ${networkInfo.chainId})\n\nPlease switch to ${networkInfo.expectedNetworkName} in MetaMask.`)
           setIsAdmin(false)
           return
         }

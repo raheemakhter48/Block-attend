@@ -69,7 +69,9 @@ export const Web3Provider = ({ children }) => {
       // Verify contract is deployed by checking code
       const code = await provider.getCode(contractAddress)
       if (code === '0x' || code === null || code === undefined) {
-        const errorMsg = `No contract found at address ${contractAddress}. Please ensure:\n1. Hardhat node is running (npm run node)\n2. Contract is deployed (npm run deploy:local)\n3. You're connected to Hardhat Local network (Chain ID: 1337)`
+        const networkName = deployment.network === 'localhost' ? 'Hardhat Local' : deployment.network
+        const chainId = deployment.chainId || 1337
+        const errorMsg = `No contract found at address ${contractAddress}.\n\nPlease ensure:\n1. Contract is deployed to ${networkName} (Chain ID: ${chainId})\n2. You're connected to ${networkName} network in MetaMask\n3. Contract address in deployment.json is correct`
         console.error(errorMsg)
         throw new Error(errorMsg)
       }
