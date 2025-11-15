@@ -7,6 +7,8 @@ import StudentPortal from './pages/StudentPortal'
 import AdminDashboard from './pages/AdminDashboard'
 import TeacherDashboard from './pages/TeacherDashboard'
 import Home from './pages/Home'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 import './App.css'
 
 const DESKTOP_BREAKPOINT = 992
@@ -80,6 +82,8 @@ const AppContent = () => {
           <Route path="/student" element={<StudentPortal />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/teacher" element={<TeacherDashboard />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

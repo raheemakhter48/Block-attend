@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import Logo from './Logo'
 import './Sidebar.css'
 
 const Sidebar = ({ isOpen, onClose, onNavigate }) => {
@@ -18,13 +19,7 @@ const Sidebar = ({ isOpen, onClose, onNavigate }) => {
   return (
     <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-logo">
-        <div className="logo-icon">
-          <div className="logo-square"></div>
-          <div className="logo-square"></div>
-          <div className="logo-square"></div>
-          <div className="logo-square"></div>
-        </div>
-        <span className="logo-text">BlockAttend</span>
+        <Logo size="medium" showText={true} />
         <button
           className="sidebar-close-btn"
           type="button"

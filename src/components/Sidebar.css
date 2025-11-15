@@ -39,7 +39,7 @@
 }
 
 .logo-square {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   border-radius: 4px;
 }
 
@@ -99,13 +99,13 @@
 }
 
 .sidebar-nav-item:focus-visible {
-  outline: 2px solid #667eea;
+  outline: 2px solid #3B82F6;
   outline-offset: 2px;
 }
 
 .sidebar-nav-item.active {
-  background: #e7f3ff;
-  color: #667eea;
+  background: #EFF6FF;
+  color: #3B82F6;
 }
 
 .sidebar-nav-item.active::before {
@@ -116,7 +116,7 @@
   transform: translateY(-50%);
   width: 3px;
   height: 24px;
-  background: #667eea;
+  background: #3B82F6;
   border-radius: 0 2px 2px 0;
 }
 

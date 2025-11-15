@@ -20,8 +20,10 @@
 .navbar-logo {
   font-size: 24px;
   font-weight: bold;
-  color: #667eea;
+  color: #3B82F6;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-menu {
@@ -39,12 +41,12 @@
 }
 
 .navbar-link:hover {
-  background: #f0f0f0;
-  color: #667eea;
+  background: #EFF6FF;
+  color: #3B82F6;
 }
 
 .navbar-link.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   color: white;
 }
 

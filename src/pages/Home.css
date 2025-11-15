@@ -41,7 +41,7 @@
 }
 
 .logo-square {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   border-radius: 4px;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .header-nav a:hover {
-  color: #667eea;
+  color: #3B82F6;
 }
 
 .home-main {
@@ -118,7 +118,7 @@
 
 .btn-primary-large {
   padding: 16px 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -150,8 +150,8 @@
 }
 
 .btn-secondary-large:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #3B82F6;
+  color: #3B82F6;
 }
 
 .features-section {
@@ -213,7 +213,7 @@
 }
 
 .feature-card:hover {
-  border-color: #667eea;
+  border-color: #3B82F6;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
   transform: translateY(-4px);
 }
@@ -221,7 +221,7 @@
 .feature-icon-wrapper {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -282,7 +282,7 @@
 }
 
 .footer-links a:hover {
-  color: #667eea;
+  color: #3B82F6;
 }
 
 @media (max-width: 768px) {

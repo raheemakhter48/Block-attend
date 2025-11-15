@@ -73,7 +73,7 @@
 
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #3B82F6;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
@@ -97,7 +97,7 @@
 }
 
 .dropdown-button:hover {
-  border-color: #667eea;
+  border-color: #3B82F6;
 }
 
 .dropdown-arrow {
@@ -221,12 +221,12 @@
 }
 
 .student-card:hover {
-  border-color: #667eea;
+  border-color: #3B82F6;
   background: #f8f9fa;
 }
 
 .student-card.selected {
-  border-color: #667eea;
+  border-color: #3B82F6;
   background: #e7f3ff;
 }
 
@@ -286,7 +286,7 @@
 
 .address-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #3B82F6;
 }
 
 .btn-add {
@@ -394,7 +394,7 @@
   width: 100%;
   padding: 12px;
   margin-top: 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -428,7 +428,7 @@
   width: 64px;
   height: 64px;
   margin: 0 auto 24px;
-  color: #667eea;
+  color: #3B82F6;
 }
 
 .wallet-connect-card h2 {
@@ -446,7 +446,7 @@
 
 .btn-connect {
   padding: 12px 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -542,7 +542,7 @@
   background: #e7f3ff;
   padding: 16px;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #3B82F6;
   margin-top: 20px;
 }
 

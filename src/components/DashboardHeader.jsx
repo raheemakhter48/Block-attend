@@ -11,8 +11,8 @@ const DashboardHeader = ({ onToggleSidebar, showSidebar }) => {
   }
 
   const getAvatarColor = (address) => {
-    if (!address) return '#667eea'
-    const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a']
+    if (!address) return '#3B82F6'
+    const colors = ['#3B82F6', '#2563EB', '#1D4ED8', '#60A5FA', '#93C5FD', '#DBEAFE']
     const index = parseInt(address.slice(2, 3), 16) % colors.length
     return colors[index]
   }

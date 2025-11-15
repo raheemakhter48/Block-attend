@@ -4,12 +4,14 @@ import { fetchAllUsers, isContractDeployed, formatError, fetchClassesWithSection
 import { verifyContractDeployment, getNetworkInfo } from '../utils/verifyContract'
 import ConnectionStatus from '../components/ConnectionStatus'
 import AccountDebug from '../components/AccountDebug'
+import Loading from '../components/Loading'
 import './AdminDashboard.css'
 
 const AdminDashboard = () => {
   const { account, contract, provider, isConnected, connectWallet, loading: web3Loading } = useWeb3()
   const [isAdmin, setIsAdmin] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [initialLoading, setInitialLoading] = useState(true)
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(null)
   const [users, setUsers] = useState([])
@@ -37,9 +39,16 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     if (isConnected && contract && account) {
-      checkAdminRole()
-      loadUsers()
-      loadClasses()
+      setInitialLoading(true)
+      Promise.all([
+        checkAdminRole(),
+        loadUsers(),
+        loadClasses()
+      ]).finally(() => {
+        setInitialLoading(false)
+      })
+    } else if (!isConnected) {
+      setInitialLoading(false)
     }
   }, [isConnected, contract, account])
 
@@ -432,7 +441,7 @@ const AdminDashboard = () => {
   }
 
   const getAvatarColor = (name) => {
-    const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a']
+    const colors = ['#3B82F6', '#2563EB', '#1D4ED8', '#60A5FA', '#93C5FD', '#DBEAFE']
     const index = name.charCodeAt(0) % colors.length
     return colors[index]
   }
@@ -440,6 +449,10 @@ const AdminDashboard = () => {
   const studentOptions = users.filter(user => user.role === 'Student')
   const selectedClass = classes.find(cls => cls.id === selectedClassId)
   const selectedSection = selectedClass?.sections.find(sec => sec.id === selectedSectionId)
+
+  if (initialLoading && isConnected) {
+    return <Loading message="Please wait while loading your details..." />
+  }
 
   if (!isConnected) {
     return (

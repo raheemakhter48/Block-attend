@@ -3,6 +3,7 @@ import { useWeb3 } from '../context/Web3Context'
 import { format } from 'date-fns'
 import { isContractDeployed, formatError } from '../utils/contractUtils'
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import Loading from '../components/Loading'
 import './StudentPortal.css'
 
 const StudentPortal = () => {
@@ -11,14 +12,20 @@ const StudentPortal = () => {
   const [attendanceHistory, setAttendanceHistory] = useState([])
   const [attendancePercentage, setAttendancePercentage] = useState(0)
   const [loading, setLoading] = useState(false)
+  const [initialLoading, setInitialLoading] = useState(true)
   const [error, setError] = useState(null)
   const [subjectStats, setSubjectStats] = useState([])
 
-  const COLORS = ['#667eea', '#764ba2', '#f093fb', '#4facfe']
+  const COLORS = ['#3B82F6', '#2563EB', '#1D4ED8', '#60A5FA']
 
   useEffect(() => {
     if (isConnected && contract && account) {
-      loadStudentData()
+      setInitialLoading(true)
+      loadStudentData().finally(() => {
+        setInitialLoading(false)
+      })
+    } else if (!isConnected) {
+      setInitialLoading(false)
     }
   }, [isConnected, contract, account])
 
@@ -133,10 +140,14 @@ const StudentPortal = () => {
     )
   }
 
+  if (initialLoading && isConnected) {
+    return <Loading message="Please wait while loading your details..." />
+  }
+
   if (loading) {
     return (
       <div className="dashboard-container">
-        <div className="loading">Loading your attendance data...</div>
+        <Loading message="Loading your attendance data..." />
       </div>
     )
   }
@@ -262,7 +273,7 @@ const StudentPortal = () => {
                         return [value, name]
                       }} />
                       <Legend />
-                      <Bar dataKey="attendance" name="Present" fill="#667eea" radius={[6, 6, 0, 0]} />
+                      <Bar dataKey="attendance" name="Present" fill="#3B82F6" radius={[6, 6, 0, 0]} />
                       <Bar dataKey="total" name="Total" fill="#dfe4ff" radius={[6, 6, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>

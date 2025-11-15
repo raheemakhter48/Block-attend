@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useWeb3 } from '../context/Web3Context'
 import { fetchClassesWithSections, fetchSectionStudents, isContractDeployed, formatError } from '../utils/contractUtils'
 import { ethers } from 'ethers'
+import Loading from '../components/Loading'
 import './TeacherDashboard.css'
 
 const TeacherDashboard = () => {
@@ -11,6 +12,7 @@ const TeacherDashboard = () => {
   const [sections, setSections] = useState([])
   const [sectionStudents, setSectionStudents] = useState([])
   const [loading, setLoading] = useState(false)
+  const [initialLoading, setInitialLoading] = useState(true)
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(null)
   const [loadingStudents, setLoadingStudents] = useState(false)
@@ -23,8 +25,15 @@ const TeacherDashboard = () => {
 
   useEffect(() => {
     if (isConnected && contract && account && provider) {
-      checkTeacherRole()
-      loadClassesData()
+      setInitialLoading(true)
+      Promise.all([
+        checkTeacherRole(),
+        loadClassesData()
+      ]).finally(() => {
+        setInitialLoading(false)
+      })
+    } else if (!isConnected) {
+      setInitialLoading(false)
     }
   }, [isConnected, contract, account, provider])
 
@@ -195,6 +204,10 @@ const TeacherDashboard = () => {
     const date = new Date(dateString)
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     return date.toLocaleDateString('en-US', options)
+  }
+
+  if (initialLoading && isConnected) {
+    return <Loading message="Please wait while loading your details..." />
   }
 
   if (!isConnected) {

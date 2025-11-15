@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Logo from '../components/Logo'
 import './Home.css'
 
 const Home = () => {
@@ -8,13 +9,7 @@ const Home = () => {
       <header className="home-header">
         <div className="header-container">
           <div className="header-logo">
-            <div className="logo-icon">
-              <div className="logo-square"></div>
-              <div className="logo-square"></div>
-              <div className="logo-square"></div>
-              <div className="logo-square"></div>
-            </div>
-            <span>BlockAttend</span>
+            <Logo size="medium" showText={true} />
           </div>
           <nav className="header-nav">
             <Link to="/student">Student</Link>
@@ -93,7 +88,7 @@ const Home = () => {
 
       <footer className="home-footer">
         <div className="footer-container">
-          <div className="footer-copyright">N 1 Issue X All rights reserved.</div>
+          <div className="footer-copyright">© 2025 BlockAttend. All Rights Reserved.</div>
           <div className="footer-links">
             <Link to="/terms">Terms of Service</Link>
             <Link to="/privacy">Privacy</Link>

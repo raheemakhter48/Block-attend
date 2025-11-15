@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useWeb3 } from '../context/Web3Context'
+import Logo from './Logo'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          📚 Attendance System
+          <Logo size="small" showText={true} />
         </Link>
         <div className="navbar-menu">
           <Link 

@@ -37,7 +37,7 @@
   width: 80px;
   height: 80px;
   margin: 0 auto 24px;
-  color: #667eea;
+  color: #3B82F6;
 }
 
 .wallet-connect-card h2 {
@@ -59,7 +59,7 @@
   align-items: center;
   gap: 12px;
   padding: 16px 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -110,7 +110,7 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   color: white;
   padding: 24px;
   border-radius: 12px;
@@ -336,7 +336,7 @@
   background: #e7f3ff;
   padding: 16px;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #3B82F6;
   margin-top: 20px;
 }
 
